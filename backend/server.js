@@ -18,7 +18,7 @@ app.post("/api/register", (req, res) => {
   }
 });
 
-// Login (plain password compare)
+// Login (plain password compare) and other things which are essential
 app.post("/api/login", (req, res) => {
   const { username, password } = req.body;
   const user = db.prepare("SELECT id, username FROM users WHERE username = ? AND password = ?").get(username, password);
