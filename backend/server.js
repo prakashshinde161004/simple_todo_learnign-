@@ -55,4 +55,10 @@ app.delete("/api/todos/:id", (req, res) => {
   res.json({ ok: true });
 });
 
+// Health Check endpoint         ← ADD THIS
+app.get("/health", (req, res) => {
+  res.json({ status: "healthy", app: "simple-todo-app" });
+});
+
 app.listen(3000, () => console.log("Backend running on http://localhost:3000"));
+
